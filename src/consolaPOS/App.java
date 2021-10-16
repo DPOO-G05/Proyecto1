@@ -17,6 +17,8 @@ import modelo.SistemaPuntos;
 
 public class App {
 	
+	private SistemaPOS sistemaPOS;
+	
 	public void mostrarMenuPrincipal() {
 		boolean continuar = true;
 		while (continuar) {
