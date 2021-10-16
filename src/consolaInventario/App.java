@@ -58,7 +58,7 @@ public class App {
 	private void cargarCSV()
 	{
 		String ruta = input("Ingrese la ruta de su archivo");
-		System.out.printf("%s\n", ruta);
+		System.out.printf("%s", ruta);
 	}
 	
 	
