@@ -61,5 +61,5 @@ public class Cliente {
 	public void cliente(String[] infoCliente) {
 		
 	}
-okspsok
+
 }
