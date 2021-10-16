@@ -1,5 +1,12 @@
 package procesamientoInventario;
 
-public class ConstructorArchivo {
+public class ConstructorArchivo 
+{
 
+	private LectorCategorias lecCat;
+	private LectorGondola lecGond;
+	private LectorLote lecLot;
+	private LectorProducto lecProd;
+
+	
 }

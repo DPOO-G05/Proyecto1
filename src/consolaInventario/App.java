@@ -1,14 +1,31 @@
 package consolaInventario;
+import java.io.*;
 import java.util.*;
+
+import appInventario.SistemaInventario;
 
 public class App {
 
+	
+	private SistemaInventario sistemaInventario;
+
+	public void App() 
+	{
+		SistemaInventario sistema = new SistemaInventario();
+		this .sistemaInventario = sistema;
+	}
+
+	
 	public static void main(String[] args) {
 		System.out.println("Aplicación Iniciada");
 		
 		App app = new App();
+		
+		
 		app.desplegarMenu();
 	}
+
+	
 	
 	public void desplegarMenu()
 	{
@@ -58,7 +75,6 @@ public class App {
 	private void cargarCSV()
 	{
 		String ruta = input("Ingrese la ruta de su archivo").strip();
-		BufferedReader file = new BufferedReader(new FileReader(ruta));
 	}
 	
 	
