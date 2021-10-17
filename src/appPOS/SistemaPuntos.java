@@ -1,4 +1,4 @@
-package modelo;
+package appPOS;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,14 +13,13 @@ public class SistemaPuntos {
 	//Metodos 
 	
 	public void preguntarDetallesPersonales() {
-		System.out.println("Por favor ingrese su informacion personal: ");
 		String nombre = input("Por favor ingrese su nombre: ");
 		int edad = Integer.parseInt(input("Ingrese su edad: "));
 		int cedula = Integer.parseInt(input("Ingrese el numero de su cedula: "));
 		char sexo = input("Ingrese 'm' para genero masculino, 'f' para genero femenino o 'n' para cualquier otro: ").charAt(0);
 		String sitLaboral = input("Ingrese su sitaucion laboral: ");
 		String estadoCivil = input("Ingrese su estado civil: ");
-		modelo.ControladorCliente.this.crearCliente(nombre,edad,cedula,sexo,sitLaboral,estadoCivil);
+		
 
 	}
 	

@@ -1,4 +1,4 @@
-package modelo;
+package appPOS;
 import java.time.*;
 import java.util.ArrayList;
 
@@ -29,9 +29,13 @@ public class Venta {
 	}
 	public void setFecha(LocalDate fecha) {
 		this.fecha = fecha;
+	}	
+	
+	public ArrayList<String> getListaProductos() {
+		return listaProductos;
 	}
-	
-	
+
+
 	public void agregarProducto(String product,ArrayList<String> listaProd) {
 		this.listaProductos.add(product);
 	}
@@ -47,6 +51,14 @@ public class Venta {
 	
 	public void generarRecibo() {
 		Recibo recibo = new Recibo();
+		recibo.setResumenPuntos("Los puntos acumulados con esta compra son " + this.getPuntos().toString());
+		ArrayList<String> productos = this.getListaProductos();
+		for (String p : productos) {
+			String s = "";
+			s += productos.get(p);
+		}
+		recibo.setResumenProductos("Resumen de los productos: " + s );
+		
 	}
 
 }

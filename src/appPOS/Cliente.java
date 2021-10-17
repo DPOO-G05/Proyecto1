@@ -1,4 +1,4 @@
-package modelo;
+package appPOS;
 
 public class Cliente {
 	
