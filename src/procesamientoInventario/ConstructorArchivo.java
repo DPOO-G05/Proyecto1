@@ -6,6 +6,7 @@ import java.util.HashMap;
 
 import appInventario.Categoria;
 import appInventario.Gondola;
+import appInventario.Lote;
 
 public class ConstructorArchivo 
 {
@@ -16,6 +17,7 @@ public class ConstructorArchivo
 	private LectorProducto lecProd;
 
 	private HashMap<String, Categoria> categorias;
+	private HashMap<String, Lote> lotes;
 	private ArrayList<Gondola> gondolas;
 	
 	
@@ -27,6 +29,7 @@ public class ConstructorArchivo
 		this.lecProd = new LectorProducto();
 		
 		this.categorias = new HashMap<String,Categoria>();
+		this.lotes = new HashMap<String,Lote>();
 		this.gondolas = new ArrayList<Gondola>();
 	}
 
@@ -83,6 +86,26 @@ public class ConstructorArchivo
 			else
 			{
 				System.out.println("Error: Debe crear la categoria antes de intentar agregar la gondola");
+			}
+		}
+	}
+	
+	
+	public void crearLotes()
+	{
+		ArrayList<Lote> lotes = this.lecLot.getLotes();
+		
+		for (Lote lote: lotes)
+		{
+			String id = Integer.toString(lote.getId());
+			//Verificar que no se encuentre en el mapa
+			if (!this.lotes.containsKey(id))
+			{
+				this.lotes.put(id, lote);
+			}
+			else
+			{
+				continue;
 			}
 		}
 	}
