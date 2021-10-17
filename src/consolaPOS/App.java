@@ -6,14 +6,12 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 import appPOS.Venta;
 import appPOS.Cliente;
 import appPOS.ControladorCliente;
 import appPOS.ControladorVenta;
 import appPOS.Recibo;
 import appPOS.SistemaPuntos;
-
 
 
 public class App {
@@ -26,11 +24,11 @@ public class App {
 			System.out.println("\nMenu:");
 			System.out.println("1: Solicitar informacion al cliente");
 			System.out.println("2: Solicitar informacion de pago");
-			System.out.println("3: Mostrar el resumen de la compra");
-			System.out.println("4: Mostrar puntos del cliente");
-			System.out.println("5: Notificar registro");
-			System.out.println("6: Notificar compra");
-			System.out.println("7: ");
+			System.out.println("3: Iniciar venta");
+			System.out.println("4: Mostrar el resumen de la compra");
+			System.out.println("5: Mostrar puntos del cliente");
+			System.out.println("6: Notificar registro");
+			System.out.println("7: Notificar compra");
 			System.out.println("8: ");
 			System.out.println("9: Salir");
 			int opcionSeleccionada = Integer.parseInt(input("Ingrese la opción deseada"));
