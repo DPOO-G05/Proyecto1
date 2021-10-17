@@ -4,12 +4,12 @@ public class Lote {
 
 	private int id;
 	private String vencimiento;
-	private String producto;
+	private Producto producto;
 	private double precioVenta;
 	private double costoProveedor;
 	private double unidades;
 	
-	public Lote(int id, String venc, String prod, double preVen, double cost, double uni)
+	public Lote(int id, String venc, Producto prod, double preVen, double cost, double uni)
 	{
 		this.id = id;
 		this.vencimiento = venc;

@@ -1,5 +1,12 @@
 package appInventario;
 
-public abstract class Producto {
+public class Producto {
+	
+	String codigoProducto;
+	
+	public Producto(String codigo)
+	{
+		this.codigoProducto = codigo; 
+	}
 
 }

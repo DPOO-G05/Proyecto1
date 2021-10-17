@@ -7,6 +7,7 @@ import java.util.HashMap;
 import appInventario.Categoria;
 import appInventario.Gondola;
 import appInventario.Lote;
+import appInventario.Producto;
 
 public class ConstructorArchivo 
 {
@@ -18,6 +19,7 @@ public class ConstructorArchivo
 
 	private HashMap<String, Categoria> categorias;
 	private HashMap<String, Lote> lotes;
+	private HashMap<String, Producto> productos;
 	private ArrayList<Gondola> gondolas;
 	
 	
@@ -31,6 +33,7 @@ public class ConstructorArchivo
 		this.categorias = new HashMap<String,Categoria>();
 		this.lotes = new HashMap<String,Lote>();
 		this.gondolas = new ArrayList<Gondola>();
+		this.productos = new HashMap<String,Producto>();
 	}
 
 	
@@ -93,7 +96,7 @@ public class ConstructorArchivo
 	
 	public void crearLotes()
 	{
-		ArrayList<Lote> lotes = this.lecLot.getLotes();
+		ArrayList<Lote> lotes = this.lecLot.getLotes(this.productos);
 		
 		for (Lote lote: lotes)
 		{
