@@ -16,6 +16,12 @@ public class Categoria {
 	
 	public void agregarGondola(Gondola gondola)
 	{
-		//TODO: CHEKEAR QUE NO ESTÉ ESA LLAVE
+		String nombreGondola = gondola.getNombre();
+		//Verificar que no esté en el mapa
+		if(!this.gondolas.containsKey(nombreGondola))
+		{
+			this.gondolas.put(nombreGondola, gondola);
+		}
+
 	}
 }

@@ -13,4 +13,15 @@ public class Gondola {
 		this.productos = new ArrayList<ProductoGondola>();
 		this.nombre = nombre;
 	}
+
+	public ArrayList<ProductoGondola> getProductos() {
+		return productos;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	
+	
 }
