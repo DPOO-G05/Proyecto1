@@ -11,6 +11,7 @@ import appInventario.Producto;
 import appInventario.ProductoCongelado;
 import appInventario.ProductoFresco;
 import appInventario.ProductoRefrigerado;
+import appInventario.Referencia;
 
 public class ConstructorArchivo 
 {
@@ -22,10 +23,10 @@ public class ConstructorArchivo
 
 	private HashMap<String, Categoria> categorias;
 	private HashMap<String, Lote> lotes;
-	private HashMap<String, Producto> productos;
-	private HashMap<String, ProductoCongelado> congelados;
-	private HashMap<String, ProductoFresco> frescos;
-	private HashMap<String, ProductoRefrigerado> refrigerados; 
+	private HashMap<String, Referencia> referencias;
+	private HashMap<String, Referencia> congelados;
+	private HashMap<String, Referencia> frescos;
+	private HashMap<String, Referencia> refrigerados; 
 
 	public ConstructorArchivo()
 	{
@@ -36,7 +37,7 @@ public class ConstructorArchivo
 		
 		this.categorias = new HashMap<String,Categoria>();
 		this.lotes = new HashMap<String,Lote>();
-		this.productos = new HashMap<String,Producto>();
+		this.referencias= new HashMap<String,Referencia>();
 	}
 
 	
@@ -99,7 +100,7 @@ public class ConstructorArchivo
 	
 	public void crearLotes()
 	{
-		ArrayList<Lote> lotes = this.lecLot.getLotes(this.productos);
+		ArrayList<Lote> lotes = this.lecLot.getLotes(this.referencias);
 		
 		for (Lote lote: lotes)
 		{
@@ -119,7 +120,7 @@ public class ConstructorArchivo
 	
 	public void crearProdutos()
 	{
-		this.lecProd.getProductos(this.lotes, this.productos,this.categorias, this.congelados,this.frescos,this.refrigerados);
+		this.lecProd.getProductos(this.lotes, this.referencias ,this.categorias, this.congelados,this.frescos,this.refrigerados);
 	}
 	
 	

@@ -2,8 +2,8 @@ package appInventario;
 
 public class ProductoRefrigerado extends Producto {
 
-	public ProductoRefrigerado(String codigo) {
-		super(codigo);
+	public ProductoRefrigerado(String codigo, String vencimiento) {
+		super(codigo, vencimiento);
 	}
 
 }

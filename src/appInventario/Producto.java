@@ -1,9 +1,11 @@
 package appInventario;
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.*;
 
 public class Producto {
 	
 	final String codigoProducto;
+	final LocalDate fechaVenc; 
 	String nombre;
 	String marca;
 	float pesoNeto;
@@ -13,11 +15,18 @@ public class Producto {
 	Date fechaIngreso;
 	int unidadesRestantes;
 	boolean empacado;
+
+	public LocalDate getFechaVenc() {
+		return fechaVenc;
+	}
+
 	boolean disponibleVenta;
 
-	public Producto(String codigo)
+	public Producto(String codigo, String fechaVenc)
 	{
 		this.codigoProducto = codigo; 
+		LocalDate fecha = LocalDate.parse(fechaVenc);
+		this.fechaVenc = fecha;
 	}
 
 	public String getNombre() {
@@ -101,6 +110,12 @@ public class Producto {
 
 	public String getCodigoProducto() {
 		return codigoProducto;
+	}
+	
+	public void modificarRestantes(int unidades)
+	{
+		//Incrementa o decrementa el número de unidades restantes
+		this.unidadesRestantes += unidades;
 	}
 
 }

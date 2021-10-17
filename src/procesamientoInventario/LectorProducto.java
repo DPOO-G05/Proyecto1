@@ -1,4 +1,5 @@
 package procesamientoInventario;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import appInventario.*;
@@ -16,13 +17,15 @@ public class LectorProducto {
 	}
 	
 
-	public void getProductos(HashMap<String,Lote> lotes, HashMap<String, Producto> productos,HashMap<String, Categoria> categorias,HashMap<String, ProductoCongelado> congelados,HashMap<String, ProductoFresco> frescos,HashMap<String, ProductoRefrigerado> refrigerados)
+	public void getProductos(HashMap<String,Lote> lotes, HashMap<String, Referencia> referencias,HashMap<String, Categoria> categorias,HashMap<String, ProductoCongelado> congelados,HashMap<String, ProductoFresco> frescos,HashMap<String, ProductoRefrigerado> refrigerados)
 	{
 		ArrayList<ArrayList<String>> data = this.lector.getDatos();
 		
 		for (ArrayList<String> linea : data)
 		{
-			String id = linea.get(2).strip();
+			//Extraer la información de cada linea
+			String vencimiento = linea.get(1).strip();
+			String SKU = linea.get(2).strip();
 			String nombre = linea.get(3).strip().toUpperCase();
 			String categoria = linea.get(4).strip().toUpperCase();
 			String gondola = linea.get(5).strip().toUpperCase();
@@ -33,13 +36,19 @@ public class LectorProducto {
 			double precioVenta = Double.parseDouble(linea.get(10));
 			String pesoNeto = linea.get(11).strip().toUpperCase();
 			String unidadMedida = linea.get(12).strip().toUpperCase(); 
-
 			
-			String idLote = linea.get(0);
-			Lote lote = lotes.get(idLote);
-			Producto product = productos.get(id);
+			//Conseguir el Lote y la referencia para recuperar el producto
+			Referencia ref = referencias.get(SKU);
+			//Crear la llave del producto
+
+			LocalDate fecha = LocalDate.parse(vencimiento);
+
+			//Asignar el producto
+
+			Producto product = ref.getProductos().get(fecha);
 
 			//Asignar Nombre
+
 			product.setNombre(nombre);
 			
 			//Asignar Marca 
@@ -55,14 +64,27 @@ public class LectorProducto {
 				product.setEmpacado(true);
 			}
 			
-			//Incrementar Cantidad
-			
-			
-			
+			//Incrementar Cantidad de la referencia
+			ref.modificarRestantes(unidades);
+			product.modificarRestantes(unidades);
+
 			
 			if (categoria.equals("CONGELADO"))
 			{
-				ProductoCongelado congelado = (ProductoCongelado) product;
+				product = (ProductoCongelado) product;
+
+				
+			}
+			else if (categoria.equals("FRESCO"))
+			{
+				
+			}
+			else if (categoria.equals("REFRIGERADO"))
+			{
+				
+			}
+			else
+			{
 				
 			}
 			
