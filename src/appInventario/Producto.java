@@ -8,7 +8,8 @@ public class Producto {
 	String marca;
 	float pesoNeto;
 	String unidadMedida;
-	float precioUnidad;
+	double costoUnidad;
+	double precioUnidad;
 	Date fechaIngreso;
 	int unidadesRestantes;
 	boolean empacado;
@@ -50,15 +51,6 @@ public class Producto {
 	public void setUnidadMedida(String unidadMedida) {
 		this.unidadMedida = unidadMedida;
 	}
-
-	public float getPrecioUnidad() {
-		return precioUnidad;
-	}
-
-	public void setPrecioUnidad(float precioUnidad) {
-		this.precioUnidad = precioUnidad;
-	}
-
 	public Date getFechaIngreso() {
 		return fechaIngreso;
 	}
@@ -77,6 +69,22 @@ public class Producto {
 
 	public boolean isEmpacado() {
 		return empacado;
+	}
+
+	public double getCostoUnidad() {
+		return costoUnidad;
+	}
+
+	public void setCostoUnidad(double costoUnidad) {
+		this.costoUnidad = costoUnidad;
+	}
+
+	public double getPrecioUnidad() {
+		return precioUnidad;
+	}
+
+	public void setPrecioUnidad(double precioUnidad) {
+		this.precioUnidad = precioUnidad;
 	}
 
 	public void setEmpacado(boolean empacado) {
