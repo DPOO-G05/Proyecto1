@@ -6,12 +6,13 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import modelo.Venta;
-import modelo.Cliente;
-import modelo.ControladorCliente;
-import modelo.ControladorVenta;
-import modelo.Recibo;
-import modelo.SistemaPuntos;
+
+import appPOS.Venta;
+import appPOS.Cliente;
+import appPOS.ControladorCliente;
+import appPOS.ControladorVenta;
+import appPOS.Recibo;
+import appPOS.SistemaPuntos;
 
 
 
@@ -48,6 +49,16 @@ public class App {
 		switch (o) {
 			case 1:
 				System.out.println("Por favor ingrese su informacion personal: ");
+				String nombre = input("Por favor ingrese su nombre: ");
+				int cedula = Integer.parseInt(input("Ingrese el numero de su cedula: "));
+				String registro = input("Desea registrarse en el sistema de puntos?: ");
+				if(registro == "si") {
+					int edad = Integer.parseInt(input("Ingrese su edad: "));
+					char sexo = input("Ingrese 'm' para genero masculino, 'f' para genero femenino o 'n' para cualquier otro: ").charAt(0);
+					String sitLaboral = input("Ingrese su sitaucion laboral: ");
+					String estadoCivil = input("Ingrese su estado civil: ");
+				}
+				
 				break;
 
 			case 2:
