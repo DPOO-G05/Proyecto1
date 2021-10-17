@@ -3,16 +3,17 @@ import java.io.*;
 import java.util.*;
 
 import appInventario.SistemaInventario;
+import procesamientoInventario.LectorArchivo;
 
 public class App {
 
 	
 	private SistemaInventario sistemaInventario;
 
-	public void App() 
+	public App() 
 	{
 		SistemaInventario sistema = new SistemaInventario();
-		this .sistemaInventario = sistema;
+		this.sistemaInventario = sistema;
 	}
 
 	
@@ -20,9 +21,8 @@ public class App {
 		System.out.println("Aplicación Iniciada");
 		
 		App app = new App();
-		
-		
 		app.desplegarMenu();
+
 	}
 
 	
@@ -74,7 +74,7 @@ public class App {
 	
 	private void cargarCSV()
 	{
-		String ruta = input("Ingrese la ruta de su archivo").strip();
+		this.sistemaInventario.leerCSV();
 	}
 	
 	
